@@ -1,0 +1,57 @@
+---
+const { title, subtitle } = Astro.props;
+import Nav from '../components/Nav';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={"Yayasan Pendidikan Harapan Medan"} />
+    <meta name="keywords" content={"Yaspendhar, pendidikan, program unggulan, Yayasan Pendidikan Harapan Medan"} />
+    <meta name="author" content=`${title}` />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title ? `${subtitle} - ${title}` : "Yaspendhar"} />
+    <meta property="og:description" content={"Yayasan Pendidikan Harapan Medan"} />
+    <meta property="og:image" content={"/default-image.jpg"} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title ? `${subtitle} - ${title}` : "Yaspendhar"} />
+    <meta name="twitter:description" content={"Yayasan Pendidikan Harapan Medan"} />
+    <meta name="twitter:image" content={"/default-image.jpg"} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Yaspendhar",
+        "url": "https://yaspendhar.com",
+        "logo": "/logo.png",
+        "description": "Yayasan Pendidikan Harapan Medan",
+        "sameAs": [
+          "https://www.facebook.com/yaspendhar",
+          "https://www.twitter.com/yaspendhar",
+          "https://www.instagram.com/yaspendhar"
+        ]
+      })}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <title>{title ? `${subtitle ? `${subtitle} - ` : ''}${title}` : "Yaspendhar"}</title>
+  </head>
+  <body>
+    <main class="font-poppins">
+      <Nav client:only />
+      <slot />
+    </main>
+  </body>
+</html>

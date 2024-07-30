@@ -1,0 +1,33 @@
+.horizontal-scroll {
+  scrollbar-color: transparent transparent;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.item figcaption {
+  color: white;
+  position: absolute;
+  bottom: -5rem;
+  background-color: rgba(0, 0, 0, 0.479);
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.item:hover figcaption {
+  bottom: 0;
+}

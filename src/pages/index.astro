@@ -1,0 +1,54 @@
+---
+import MainLayouts from '../layouts/main-layouts.astro';
+import Carousel from '../components/pages/Beranda/Carousel';
+import ScrollProgram from '../components/pages/Beranda/ScrollProgram';
+import Artikel from '../components/pages/Beranda/Artikel';
+---
+
+<MainLayouts subtitle="Beranda" title="Yaspendhar">
+  <Carousel client:load />
+  <!-- Section 1  -->
+  <section class="flex flex-col px-4 lg:px-32 py-16 gap-y-16">
+    <div class="flex justify-between items-center">
+      <h1 class="uppercase text-xl md:text-2xl xl:text-3xl font-bold">profil yayasan</h1>
+      <span class="w-32 md:w-64 h-1.5 bg-yellowPrimary"></span>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-y-8 md:gap-y-0 md:gap-x-14 xl:gap-x-28">
+      <img src="/profile-yayasan.png" alt="Profile Yayasan" class="md:w-[22rem] lg:w-[23rem] xl:w-[35rem] rounded-3xl" />
+      <div class="flex flex-col gap-y-4">
+        <h2 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase text-center md:text-start">Yayasan Pendidikan harapan medan</h2>
+        <p class="text-sm md:text-base xl:text-lg text-justify">
+          Lorem ipsum dolor sit amet consectetur. Facilisi nisl ultrices egestas nunc facilisis. Egestas magna in morbi nibh sit lobortis ac amet. Eros bibendum id neque montes malesuada. Pulvinar aenean nulla aliquam et ipsum cras euismod
+          id id. Tellus massa quis eget tincidunt morbi facilisi eget egestas. Accumsan quis leo ipsum gravida suscipit pellentesque fringilla. Varius quis lacus dictum sem vulputate at. Proin euismod malesuada egestas fames lorem eu duis
+          magna. Mattis in eget ipsum enim ut volutpat a in est. Nibh integer fusce pharetra nibh nunc ullamcorper fermentum volutpat. Id sagittis augue rhoncus pharetra nunc. Tellus ac eget consequat in turpis mi. Mi laoreet sed sit varius
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="flex flex-col px-4 lg:px-32 py-16 gap-y-16">
+    <div class="flex justify-between items-center">
+      <span class="w-32 md:w-64 h-1.5 bg-yellowPrimary"></span>
+      <h1 class="uppercase text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-end">prakata ketua yayasan</h1>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-y-8 md:gap-y-0 md:gap-x-14 xl:gap-x-28">
+      <div class="flex flex-col gap-y-4">
+        <h2 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase text-center md:text-start">TAPI RONDANG NI BULAN LUBIS</h2>
+        <p class="text-sm md:text-base xl:text-lg text-justify">
+          Lorem ipsum dolor sit amet consectetur. Facilisi nisl ultrices egestas nunc facilisis. Egestas magna in morbi nibh sit lobortis ac amet. Eros bibendum id neque montes malesuada. Pulvinar aenean nulla aliquam et ipsum cras euismod
+          id id. Tellus massa quis eget tincidunt morbi facilisi eget egestas. Accumsan quis leo ipsum gravida suscipit pellentesque fringilla. Varius quis lacus dictum sem vulputate at. Proin euismod malesuada egestas fames lorem eu duis
+          magna. Mattis in eget ipsum enim ut volutpat a in est. Nibh integer fusce pharetra nibh nunc ullamcorper fermentum volutpat. Id sagittis augue rhoncus pharetra nunc. Tellus ac eget consequat in turpis mi. Mi laoreet sed sit varius
+          at. Libero ultrices nunc tristique ipsum sit sit vulputate enim nisl.
+        </p>
+      </div>
+      <img src="/profile-yayasan.png" alt="Profile Yayasan" class="md:w-[22rem] lg:w-[23rem] xl:w-[35rem] rounded-3xl" />
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <ScrollProgram client:load />
+
+  <!-- Section 4 -->
+  <Artikel client:load />
+</MainLayouts>
