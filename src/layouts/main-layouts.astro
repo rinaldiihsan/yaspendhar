@@ -1,6 +1,8 @@
 ---
 const { title, subtitle } = Astro.props;
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+const year = new Date().getFullYear();
 ---
 
 <html lang="en">
@@ -8,14 +10,14 @@ import Nav from '../components/Nav';
     <meta charset="utf-8" />
     <link rel="icon" type="image" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={"Yayasan Pendidikan Harapan Medan"} />
+    <meta name="description" content={`Yayasan Pendidikan Harapan Medan ${year}`} />
     <meta name="keywords" content={"Yaspendhar, pendidikan, program unggulan, Yayasan Pendidikan Harapan Medan"} />
     <meta name="author" content=`${title}` />
     <meta name="generator" content={Astro.generator} />
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content={title ? `${subtitle} - ${title}` : "Yaspendhar"} />
-    <meta property="og:description" content={"Yayasan Pendidikan Harapan Medan"} />
+    <meta property="og:description" content={`Yayasan Pendidikan Harapan Medan ${year}`} />
     <meta property="og:image" content={"/default-image.jpg"} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
@@ -23,7 +25,7 @@ import Nav from '../components/Nav';
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title ? `${subtitle} - ${title}` : "Yaspendhar"} />
-    <meta name="twitter:description" content={"Yayasan Pendidikan Harapan Medan"} />
+    <meta name="twitter:description" content={`Yayasan Pendidikan Harapan Medan ${year}`} />
     <meta name="twitter:image" content={"/default-image.jpg"} />
 
     <!-- JSON-LD Structured Data -->
@@ -52,6 +54,8 @@ import Nav from '../components/Nav';
     <main class="font-poppins">
       <Nav client:only />
       <slot />
+      <Footer />
     </main>
   </body>
 </html>
+

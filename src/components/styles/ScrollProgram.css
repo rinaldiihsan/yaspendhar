@@ -31,3 +31,7 @@
 .item:hover figcaption {
   bottom: 0;
 }
+
+.item:active figcaption {
+  bottom: 0;
+}

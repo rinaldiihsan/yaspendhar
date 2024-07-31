@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'usehooks-ts';
+import './styles/Navbar.css';
 
 const navMotion = {
   visible: {
@@ -34,7 +35,7 @@ const Nav = () => {
     return null;
   }
 
-  const isActive = (path: string) => (pathname === path ? 'font-medium ' : '');
+  const isActive = (path: string) => (pathname === path ? 'nav-link active' : 'nav-link');
 
   return (
     <nav className="flex justify-between items-center px-4 lg:px-32 py-5 bg-greenPrimary sticky top-0 shadow-sm z-50">
@@ -45,11 +46,14 @@ const Nav = () => {
 
       {matches && (
         <div className="flex gap-x-5 justify-between text-white">
-          <a href="/" className={isActive('/')}>
+          <a href="/" className={`${isActive('/')} nav-link`}>
             Beranda
           </a>
-          <a href="/tentang-kami" className={isActive('/tentang-kami')}>
+          <a href="/tentang-kami" className={`${isActive('/tentang-kami')} nav-link`}>
             Tentang Kami
+          </a>
+          <a href="/galeri" className={`${isActive('/galeri')} nav-link`}>
+            Galeri
           </a>
         </div>
       )}
@@ -65,11 +69,14 @@ const Nav = () => {
       {toggled && !matches && (
         <div className="flex fixed bg-greenPrimary bottom-0 left-0 w-full h-screen justify-center items-center">
           <motion.div variants={navMotion} animate="visible" initial="hidden" className="flex flex-col gap-y-4 text-white">
-            <motion.a variants={itemMotion} href="/" className={isActive('/')}>
+            <motion.a variants={itemMotion} href="/" className={`${isActive('/')} nav-link`}>
               Beranda
             </motion.a>
-            <motion.a variants={itemMotion} href="/tentang-kami" className={isActive('/tentang-kami')}>
+            <motion.a variants={itemMotion} href="/tentang-kami" className={`${isActive('/tentang-kami')} nav-link`}>
               Tentang Kami
+            </motion.a>
+            <motion.a variants={itemMotion} href="/galeri" className={`${isActive('/galeri')} nav-link`}>
+              Galeri
             </motion.a>
           </motion.div>
         </div>

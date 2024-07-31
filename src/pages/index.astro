@@ -3,6 +3,7 @@ import MainLayouts from '../layouts/main-layouts.astro';
 import Carousel from '../components/pages/Beranda/Carousel';
 import ScrollProgram from '../components/pages/Beranda/ScrollProgram';
 import Artikel from '../components/pages/Beranda/Artikel';
+import Accordion from '../components/pages/Beranda/Accordion';
 ---
 
 <MainLayouts subtitle="Beranda" title="Yaspendhar">
@@ -25,7 +26,6 @@ import Artikel from '../components/pages/Beranda/Artikel';
       </div>
     </div>
   </section>
-
   <!-- Section 2 -->
   <section class="flex flex-col px-4 lg:px-32 py-16 gap-y-16">
     <div class="flex justify-between items-center">
@@ -45,10 +45,10 @@ import Artikel from '../components/pages/Beranda/Artikel';
       <img src="/profile-yayasan.png" alt="Profile Yayasan" class="md:w-[22rem] lg:w-[23rem] xl:w-[35rem] rounded-3xl" />
     </div>
   </section>
-
   <!-- Section 3 -->
   <ScrollProgram client:load />
-
   <!-- Section 4 -->
   <Artikel client:load />
+  <!-- Section 5 -->
+  <Accordion client:load />
 </MainLayouts>
