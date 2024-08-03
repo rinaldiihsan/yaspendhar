@@ -33,7 +33,7 @@ const Artikel = () => {
       <h1 className="uppercase text-xl md:text-2xl xl:text-3xl font-bold">Artikel Terbaru</h1>
       {articles.map((article, index) => (
         <div key={index} className="flex flex-col xl:flex-row justify-between items-center text-center xl:gap-x-11 gap-y-8 xl:gap-y-0">
-          <img src={article.image} alt="Dummy Artikel" className="w-[100%] xl:w-[50rem]" />
+          <img src={article.image} alt="Dummy Artikel" className="w-[100%] xl:w-[50rem]" loading="lazy" />
           <div className="flex flex-col gap-y-4 text-left">
             <div className="flex flex-col gap-y-2 xl:max-w-[50em]">
               <h3 className="font-medium">{article.date}</h3>
